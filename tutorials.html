@@ -1,0 +1,44 @@
+---
+layout: page
+title: Tutorials
+description: Learn at your own pace!
+---
+{% for tut in site.tutorials %}
+{% capture filename %}{{ tut.path | remove:"_tutorials/" | split:"/" | last }}{% endcapture %}
+    {% if filename == "index.md" %}
+            <div class="post-preview">
+                <a href="{{ site.baseurl }}{{ tut.url }}">
+                <h2 class="post-title">{{ tut.title }}
+                </h2>
+                {% if tut.excerpt %}
+                    <h4 class="post-subtitle">
+                    {{ tut.excerpt }}
+                    </h4>
+                {% endif %}
+                </a>
+                <p class="post-meta">Last updated: {{ tut.last_updated | date: "%B %-d, %Y" }}</p>
+            </div>
+            <hr>
+        <!--
+            <article class="span 12 ">
+                <header>
+                    % include libs/thumbnail %}
+                    <hgroup>
+                        <h2>
+                            <a href="{{ site.baseurl }}{{ tut.url }}">{{ tut.title }}</a>
+                        </h2>
+                        <h5>
+                            {{ tut.author }}
+                        </h5>
+                    </hgroup>
+                </header>
+                <div class="content">
+                    % include libs/truncate_exec id=tut %}
+                </div>
+                <footer>
+                    <p><a href="{{ site.baseurl }}{{ tut.url }}" class="btn">Read this &raquo;</a></p>
+                </footer>
+            </article>
+        -->
+    {% endif %}
+{% endfor %}

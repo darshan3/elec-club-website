@@ -24,3 +24,9 @@ url: http://elec-club-iitb.github.io
 
 # Permalink
 permalink: /blog/:year/:month/:title/
+
+# Declaring tutorials collection
+collections:
+  tutorials:
+    permalink: /tutorials/:path/
+    output: true
