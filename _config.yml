@@ -30,3 +30,9 @@ collections:
   tutorials:
     permalink: /tutorials/:path/
     output: true
+
+# For comments sections
+disqus:
+    short_name: eciitb
+    comment_count: true
+    developer_mode: true

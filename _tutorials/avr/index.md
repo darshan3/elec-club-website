@@ -1,4 +1,5 @@
 ---
+comments: true
 layout: tutorial
 topic_folder: avr
 title: AVR Programming

@@ -1,4 +1,5 @@
 ---
+comments: true
 layout: tutorial
 topic_folder: arduino
 title: Arduino Programming

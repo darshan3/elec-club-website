@@ -23,13 +23,13 @@ layout: default
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 {{ content }}
-            <hr>
-            <h2>Contents:</h2>
-            <div class="content index" style="padding: 1.5em; font-size: 1.5em; background-color: #f6f6f6;" >
-            <ul class="content-list" type="none">
-            {% for tut in site.tutorials %}
-            {% capture tutname %}{{ tut.path | remove:"_tutorials/" | split:"/" | first }}{% endcapture %}
-            {% capture filename %}{{ tut.path | remove:"_tutorials/" | split:"/" | last }}{% endcapture %}
+                <hr>
+                <h2>Contents:</h2>
+                <div class="content index" style="padding: 1.5em; font-size: 1.5em; background-color: #f6f6f6;" >
+                <ul class="content-list" type="none">
+                {% for tut in site.tutorials %}
+                {% capture tutname %}{{ tut.path | remove:"_tutorials/" | split:"/" | first }}{% endcapture %}
+                {% capture filename %}{{ tut.path | remove:"_tutorials/" | split:"/" | last }}{% endcapture %}
                 {% if filename != "index.md" and page.topic_folder == tutname %}
                 {% capture tutindex %}{{ filename | split:"-" | first }}{% endcapture %}
                 {% capture filename %}{{ filename | split:"-" | last }}{% endcapture %}
@@ -48,24 +48,27 @@ layout: default
                     {% endif %}
                 </li>
                 {% endif %}
-            {% endfor %}
-            </ul>
-            </div>
-        <hr>
-        {% for tut in site.tutorials %}
-        {% capture tutname %}{{ tut.path | remove:"_tutorials/" | split:"/" | first }}{% endcapture %}
-        {% capture filename %}{{ tut.path | remove:"_tutorials/" | split:"/" | last }}{% endcapture %}
-            {% if filename != "index.md" and page.topic_folder == tutname %}
-            <div id="{{ filename | split:"-" | last | remove:".md" }}">
+                {% endfor %}
+                </ul>
+                </div>
+                <hr>
+                {% for tut in site.tutorials %}
+                {% capture tutname %}{{ tut.path | remove:"_tutorials/" | split:"/" | first }}{% endcapture %}
+                {% capture filename %}{{ tut.path | remove:"_tutorials/" | split:"/" | last }}{% endcapture %}
+                {% if filename != "index.md" and page.topic_folder == tutname %}
+                <div id="{{ filename | split:"-" | last | remove:".md" }}">
                 <h3>{{ tut.title }}</h3>
                 <p>
                 {{ tut.content }}
                 </p>
-            </div>
-            <hr>
-            {% endif %}
-        {% endfor %}
-        <hr>
+                </div>
+                <hr>
+                {% endif %}
+                {% endfor %}
+                
+                <div id="disqus_thread"></div>
+
+                <hr>
 
             </div>
         </div>

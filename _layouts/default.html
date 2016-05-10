@@ -9,6 +9,8 @@
 
     {{ content }}
 
+    {% include comments.html %}
+
     {% include footer.html %}
     <a href="#" class="go-top" style="
 	position: fixed;
@@ -40,7 +42,7 @@
 			$('.go-top').click(function(event) {
 				event.preventDefault();
 				
-				$('html, body').animate({scrollTop: 0}, 300);
+				$('html, body').animate({scrollTop: 0}, 1000);
 			})
 		});
 </script>
